@@ -29,7 +29,7 @@
                 SubzeroTorrents
             </h1>
             <h2 class="subtitle">
-                Free torrent search engine
+                Free & Open Source torrent search engine
             </h2>
         </div>
     </div>
@@ -52,6 +52,12 @@
 
 <div class="container is-fluid">
     <div class="notification" id="resDiv">
+        <p class="centered">Welcome to SubzeroTorrents!</p>
+        <br />
+        <p class="centered">Acronyms:</p>
+        <p class="centered">TBP - The Pirate Bay</p>
+        <p class="centered">YTS - YTS.am (Best for movies, use it for movie downloads)</p>
+        <br />
         <p class="centered">Please enter a search term!</p>
     </div>
 </div>
