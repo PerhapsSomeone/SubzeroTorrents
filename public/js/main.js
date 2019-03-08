@@ -11,6 +11,11 @@ const searchYTS = (query) => {
 };
 
 const search = (term) => {
+
+    let timer = setTimeout(() => {
+        document.getElementById("resDiv").innerHTML = "<p class='centered'>No results found. Maybe you could try a different search term?</p><br /><p class='centered'>If you are sure a torrent with this name exists, the backend might have a problem. Try again later.</p>";
+    }, 2500);
+
     document.getElementById("resDiv").innerHTML = "<div id='loader'><div class=\"multi-spinner-container\"> <div class=\"multi-spinner\"> <div class=\"multi-spinner\"> <div class=\"multi-spinner\"> <div class=\"multi-spinner\"> <div class=\"multi-spinner\"> <div class=\"multi-spinner\"></div> </div> </div> </div> </div> </div> </div></div>";
 
     searchPirateBay(term)
@@ -19,7 +24,7 @@ const search = (term) => {
             res.forEach((el) => {
                 document.getElementById("resDiv").innerHTML += `<p>[TBP] - ${ el.title } <a style="float: right; margin-left: 10px" href="${ el.magnet }">Magnet link</a><span style="float: right">${ el.size }</span> </p><hr />`;
             });
-            searches_completed++;
+            clearTimeout(timer);
         });
 
     searchYTS(term)
@@ -33,7 +38,9 @@ const search = (term) => {
                 });
                 document.getElementById("resDiv").innerHTML += `</p><hr />`;
             })
+            clearTimeout(timer);
         });
+
 };
 
 const buttonSearch = () => {
